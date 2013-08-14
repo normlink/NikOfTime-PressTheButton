@@ -67,6 +67,15 @@
 }
 
 - (IBAction)startDemo:(id)sender {
+    for (UIView * subview in self.view.subviews){
+            if ([subview isKindOfClass:[ColorButtons class]]){
+                [UIView animateWithDuration:0.0 animations:^{
+                subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
+                    
+                }];
+            }}
+
+    
     [successLabel setHidden:YES];
     [lossLabel setHidden:YES];
     gameCounter = 0;
@@ -95,19 +104,20 @@
             if ([subview isKindOfClass:[ColorButtons class]]){
                 if (subview.tag == counter){
                     subview.backgroundColor = newColorArray[counter];
-                    [UIView animateWithDuration:0.1 animations:^{
+                   /* [UIView animateWithDuration:0.0 animations:^{
                                          
                         subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
                                          
-                        } completion:^(BOOL finished) {
+                        } completion:^(BOOL finished) { */
                                          
                             [UIView animateWithDuration:1.0 animations:^{
                                                               
                             subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
                                      }];
-                            }];
-                }}
+                          
+                }
         }
+    }
     }
 
 }
