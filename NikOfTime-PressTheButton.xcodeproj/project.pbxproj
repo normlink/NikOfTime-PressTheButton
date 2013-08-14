@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6185951717BBD014007FB048 /* ColorButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6185951617BBD014007FB048 /* ColorButtons.m */; };
 		61A5EAB817BADFE50026A103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A5EAB717BADFE50026A103 /* UIKit.framework */; };
 		61A5EABA17BADFE50026A103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A5EAB917BADFE50026A103 /* Foundation.framework */; };
 		61A5EABC17BADFE50026A103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A5EABB17BADFE50026A103 /* CoreGraphics.framework */; };
@@ -21,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6185951517BBD014007FB048 /* ColorButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButtons.h; sourceTree = "<group>"; };
+		6185951617BBD014007FB048 /* ColorButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButtons.m; sourceTree = "<group>"; };
+		6185951817BBE5DD007FB048 /* ClickDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickDelegate.h; sourceTree = "<group>"; };
 		61A5EAB417BADFE50026A103 /* NikOfTime-PressTheButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NikOfTime-PressTheButton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5EAB717BADFE50026A103 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		61A5EAB917BADFE50026A103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +92,9 @@
 				61A5EACF17BADFE50026A103 /* MainStoryboard.storyboard */,
 				61A5EAD217BADFE50026A103 /* ViewController.h */,
 				61A5EAD317BADFE50026A103 /* ViewController.m */,
+				6185951817BBE5DD007FB048 /* ClickDelegate.h */,
+				6185951517BBD014007FB048 /* ColorButtons.h */,
+				6185951617BBD014007FB048 /* ColorButtons.m */,
 				61A5EABE17BADFE50026A103 /* Supporting Files */,
 			);
 			path = "NikOfTime-PressTheButton";
@@ -176,6 +183,7 @@
 				61A5EAC417BADFE50026A103 /* main.m in Sources */,
 				61A5EAC817BADFE50026A103 /* AppDelegate.m in Sources */,
 				61A5EAD417BADFE50026A103 /* ViewController.m in Sources */,
+				6185951717BBD014007FB048 /* ColorButtons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +306,7 @@
 				61A5EAD917BADFE50026A103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
