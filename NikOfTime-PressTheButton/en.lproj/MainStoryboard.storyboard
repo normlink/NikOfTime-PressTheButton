@@ -52,7 +52,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Matt sucks!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqm-Hs-Xu4">
+                            <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fail!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqm-Hs-Xu4">
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="7xD-EC-W65"/>
@@ -100,26 +100,6 @@
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="ColorButtons" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorButtons.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startDemo:"/>
-                <relationship kind="outlet" name="buttonView0" candidateClass="UIView"/>
-                <relationship kind="outlet" name="buttonView1" candidateClass="UIView"/>
-                <relationship kind="outlet" name="buttonView2" candidateClass="UIView"/>
-                <relationship kind="outlet" name="lossLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="successLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textInstruction" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

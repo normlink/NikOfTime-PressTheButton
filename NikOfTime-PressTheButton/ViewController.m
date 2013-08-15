@@ -79,7 +79,9 @@
                     
                 }];
             }}
-
+    //for (UILabel * subview in self.view.subviews){
+        successLabel.transform = CGAffineTransformScale(successLabel.transform, 0.01, 0.01);
+        //lossLabel.transform = CGAffineTransformScale(lossLabel.transform, 0.01, 0.01);
     
     [successLabel setHidden:YES];
     [lossLabel setHidden:YES];
@@ -136,6 +138,16 @@
         [thisView setAlpha:0.5];
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         [successLabel setHidden:NO];
+          [UIView animateWithDuration:1.0 animations:^{
+                //successLabel.transform = CGAffineTransformMakeRotation(M_PI);
+                successLabel.transform = CGAffineTransformScale(successLabel.transform, 100, 100);
+              //along w/rotate above will go forward then back(may need *2 below)(scale transform above
+          /* completion:^(BOOL finished) {
+              [UIView animateWithDuration:0.5 animations:^{
+                  successLabel.transform = CGAffineTransformMakeRotation(M_PI * 4);
+              }];*/
+          }];
+        
     }else{
         [lossLabel setHidden:NO];
     }
