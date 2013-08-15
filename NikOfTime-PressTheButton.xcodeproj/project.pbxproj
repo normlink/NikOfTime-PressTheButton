@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6185951717BBD014007FB048 /* ColorButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6185951617BBD014007FB048 /* ColorButtons.m */; };
+		6185951A17BD3DCB007FB048 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6185951917BD3DCB007FB048 /* QuartzCore.framework */; };
 		61A5EAB817BADFE50026A103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A5EAB717BADFE50026A103 /* UIKit.framework */; };
 		61A5EABA17BADFE50026A103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A5EAB917BADFE50026A103 /* Foundation.framework */; };
 		61A5EABC17BADFE50026A103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A5EABB17BADFE50026A103 /* CoreGraphics.framework */; };
@@ -25,6 +26,7 @@
 		6185951517BBD014007FB048 /* ColorButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButtons.h; sourceTree = "<group>"; };
 		6185951617BBD014007FB048 /* ColorButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButtons.m; sourceTree = "<group>"; };
 		6185951817BBE5DD007FB048 /* ClickDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickDelegate.h; sourceTree = "<group>"; };
+		6185951917BD3DCB007FB048 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		61A5EAB417BADFE50026A103 /* NikOfTime-PressTheButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NikOfTime-PressTheButton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A5EAB717BADFE50026A103 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		61A5EAB917BADFE50026A103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6185951A17BD3DCB007FB048 /* QuartzCore.framework in Frameworks */,
 				61A5EAB817BADFE50026A103 /* UIKit.framework in Frameworks */,
 				61A5EABA17BADFE50026A103 /* Foundation.framework in Frameworks */,
 				61A5EABC17BADFE50026A103 /* CoreGraphics.framework in Frameworks */,
@@ -60,6 +63,7 @@
 		61A5EAAB17BADFE50026A103 = {
 			isa = PBXGroup;
 			children = (
+				6185951917BD3DCB007FB048 /* QuartzCore.framework */,
 				61A5EABD17BADFE50026A103 /* NikOfTime-PressTheButton */,
 				61A5EAB617BADFE50026A103 /* Frameworks */,
 				61A5EAB517BADFE50026A103 /* Products */,

@@ -5,6 +5,7 @@
 //  Created by Yaniv Kerem on 8/13/13.
 //  Copyright (c) 2013 Norm Gershon. All rights reserved.
 //
+
 #import "ColorButtons.h"
 #import "ViewController.h"
 
@@ -70,6 +71,9 @@
     for (UIView * subview in self.view.subviews){
             if ([subview isKindOfClass:[ColorButtons class]]){
                 [subview setAlpha:1.0];
+                ColorButtons *view = (ColorButtons*) subview;
+                view.layer.borderWidth = 2;
+                view.layer.cornerRadius = 40;
                 [UIView animateWithDuration:0.0 animations:^{
                 subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
                     
@@ -123,11 +127,12 @@
     }
 
 }
--(void) didClickView:(ColorButtons *)thisView
+-(void) didClickGame1View:(ColorButtons *)thisView
 {
     if ((gameCounter == 0) && (thisView.backgroundColor == playArray[gameCounter])) {
         gameCounter++;
         correct = YES;
+        thisView.layer.borderWidth = 6;
         [thisView setAlpha:0.5];
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         [successLabel setHidden:NO];

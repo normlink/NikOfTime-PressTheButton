@@ -12,6 +12,6 @@
 
 @protocol ClickDelegate <NSObject>
 
--(void) didClickView: (ColorButtons *) thisView;
+-(void) didClickGame1View: (ColorButtons *) thisView;
 
 @end
