@@ -16,12 +16,12 @@
     UIColor *blue;
     UIColor *yellow;
     NSArray *colorArray;
-    NSMutableArray * gameArray;
+    NSMutableArray * gameLabelArray;
     NSMutableDictionary *playDictionary;
     NSArray * viewArray;
     NSArray * colorLabelArray;
     NSMutableArray *playArray;
-    NSMutableArray * muteColorArray;
+    NSMutableArray * mutableColorLabelArray;
     __weak IBOutlet UILabel *textInstruction;
     __weak IBOutlet UIView *buttonView0;
     __weak IBOutlet UILabel *successLabel;
@@ -48,7 +48,7 @@
     viewArray = @[@(0), @(1), @(2)];
     
     //NSLog(@"clu%lu",(unsigned long)[colorLabelArray count]);
-    muteColorArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
+    mutableColorLabelArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
     
     [super viewDidLoad];
 	
@@ -69,6 +69,7 @@
 - (IBAction)startDemo:(id)sender {
     for (UIView * subview in self.view.subviews){
             if ([subview isKindOfClass:[ColorButtons class]]){
+                [subview setAlpha:1.0];
                 [UIView animateWithDuration:0.0 animations:^{
                 subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
                     
@@ -80,24 +81,25 @@
     [lossLabel setHidden:YES];
     gameCounter = 0;
     correct = NO;
-    muteColorArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
-    gameArray = [[NSMutableArray alloc] initWithCapacity:10];
+    mutableColorLabelArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
+    gameLabelArray = [[NSMutableArray alloc] initWithCapacity:10];
     NSMutableArray* gameColorArray = [[NSMutableArray alloc] initWithArray:colorArray];
     NSMutableArray* newColorArray = [[NSMutableArray alloc] initWithCapacity:10];
-    for (int num = 0; num <= ([muteColorArray count]+1); num++) {
+    for (int num = 0; num <= ([mutableColorLabelArray count]+1); num++) {
         int counter = arc4random()%(3-num);
-        [gameArray addObject:muteColorArray[counter]];
-        [muteColorArray removeObjectAtIndex:counter];
-        [newColorArray addObject:gameColorArray[counter]];
-        [gameColorArray removeObjectAtIndex:counter];
+        int altCounter = arc4random()%(3-num);
+        [gameLabelArray addObject:mutableColorLabelArray[counter]];
+        [mutableColorLabelArray removeObjectAtIndex:counter];
+        [newColorArray addObject:gameColorArray[altCounter]];
+        [gameColorArray removeObjectAtIndex:altCounter];
         NSLog(@"colorarray %lu", (unsigned long)[newColorArray count]);
         
-    } textInstruction.text = [NSString stringWithFormat:@"Press the %@ button then the %@ button", gameArray[0], gameArray[1]];
+    } textInstruction.text = [NSString stringWithFormat:@"Press the %@ button then the %@ button", gameLabelArray[0], gameLabelArray[1]];
     playArray = [[NSMutableArray alloc] initWithCapacity:5];
-    [playArray addObject:[playDictionary objectForKey:gameArray[0]]];
-    [playArray addObject:[playDictionary objectForKey:gameArray[1]]];
+    [playArray addObject:[playDictionary objectForKey:gameLabelArray[0]]];
+    [playArray addObject:[playDictionary objectForKey:gameLabelArray[1]]];
     NSLog(@"playRray%i",[playArray count]);
-    gameArray = nil;
+    gameLabelArray = nil;
     
     for (UIView * subview in self.view.subviews){
         for (int counter = 0; counter < 4; counter++) {
@@ -126,6 +128,7 @@
     if ((gameCounter == 0) && (thisView.backgroundColor == playArray[gameCounter])) {
         gameCounter++;
         correct = YES;
+        [thisView setAlpha:0.5];
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         [successLabel setHidden:NO];
     }else{
