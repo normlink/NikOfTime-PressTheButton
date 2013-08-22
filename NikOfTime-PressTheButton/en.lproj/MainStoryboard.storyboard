@@ -26,13 +26,13 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDO-dh-aOf" customClass="ColorButtons">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82B-su-Rp2" customClass="ColorButtons">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJE-kh-d2d" customClass="ColorButtons">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="173" translatesAutoresizingMaskIntoConstraints="NO" id="JgU-7b-bnS">
                                 <constraints>
@@ -100,6 +100,26 @@
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="ColorButtons" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorButtons.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startDemo:"/>
+                <relationship kind="outlet" name="buttonView0" candidateClass="UIView"/>
+                <relationship kind="outlet" name="buttonView1" candidateClass="UIView"/>
+                <relationship kind="outlet" name="buttonView2" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lossLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="successLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="textInstruction" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

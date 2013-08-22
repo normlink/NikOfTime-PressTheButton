@@ -46,10 +46,10 @@
     colorArray = @[red,blue,yellow];
     colorLabelArray = @[@"redColor", @"blueColor", @"yellowColor"];
     playDictionary = [[NSMutableDictionary alloc] initWithObjects:colorArray forKeys:colorLabelArray];
-    viewArray = @[@(0), @(1), @(2)];
+    //viewArray = @[@(0), @(1), @(2)];
     
     //NSLog(@"clu%lu",(unsigned long)[colorLabelArray count]);
-    mutableColorLabelArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
+    //mutableColorLabelArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
     
     [super viewDidLoad];
 	
@@ -74,10 +74,9 @@
                 ColorButtons *view = (ColorButtons*) subview;
                 view.layer.borderWidth = 2;
                 view.layer.cornerRadius = 40;
-                [UIView animateWithDuration:0.0 animations:^{
+
                 subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
                     
-                }];
             }}
     //for (UILabel * subview in self.view.subviews){
         successLabel.transform = CGAffineTransformScale(successLabel.transform, 0.01, 0.01);
@@ -89,16 +88,16 @@
     correct = NO;
     mutableColorLabelArray = [[NSMutableArray alloc] initWithArray:colorLabelArray];
     gameLabelArray = [[NSMutableArray alloc] initWithCapacity:10];
-    NSMutableArray* gameColorArray = [[NSMutableArray alloc] initWithArray:colorArray];
-    NSMutableArray* newColorArray = [[NSMutableArray alloc] initWithCapacity:10];
-    for (int num = 0; num <= ([mutableColorLabelArray count]+1); num++) {
-        int counter = arc4random()%(3-num);
-        int altCounter = arc4random()%(3-num);
-        [gameLabelArray addObject:mutableColorLabelArray[counter]];
-        [mutableColorLabelArray removeObjectAtIndex:counter];
-        [newColorArray addObject:gameColorArray[altCounter]];
-        [gameColorArray removeObjectAtIndex:altCounter];
-        NSLog(@"colorarray %lu", (unsigned long)[newColorArray count]);
+    NSMutableArray* mutableColorArray = [[NSMutableArray alloc] initWithArray:colorArray];
+    NSMutableArray* playColorArray = [[NSMutableArray alloc] initWithCapacity:10];
+    for (int num = 0; num < ([colorArray count]); num++) {
+        int random = arc4random()%(3-num);
+        int altRandom = arc4random()%(3-num);
+        [gameLabelArray addObject:mutableColorLabelArray[random]];
+        [mutableColorLabelArray removeObjectAtIndex:random];
+        [playColorArray addObject:mutableColorArray[altRandom]];
+        [mutableColorArray removeObjectAtIndex:altRandom];
+        NSLog(@"colorarray %lu", (unsigned long)[playColorArray count]);
         
     } textInstruction.text = [NSString stringWithFormat:@"Press the %@ button then the %@ button", gameLabelArray[0], gameLabelArray[1]];
     playArray = [[NSMutableArray alloc] initWithCapacity:5];
@@ -111,7 +110,7 @@
         for (int counter = 0; counter < 4; counter++) {
             if ([subview isKindOfClass:[ColorButtons class]]){
                 if (subview.tag == counter){
-                    subview.backgroundColor = newColorArray[counter];
+                    subview.backgroundColor = playColorArray[counter];
                    /* [UIView animateWithDuration:0.0 animations:^{
                                          
                         subview.transform = CGAffineTransformScale(subview.transform, 0.01, 0.01);
@@ -121,6 +120,7 @@
                             [UIView animateWithDuration:1.0 animations:^{
                                                               
                             subview.transform = CGAffineTransformScale(subview.transform, 100, 100);
+                                NSLog(@"yes");
                                      }];
                           
                 }
@@ -138,11 +138,11 @@
         [thisView setAlpha:0.5];
     }else if ((correct = YES) && (thisView.backgroundColor == playArray[gameCounter])){
         [successLabel setHidden:NO];
-          [UIView animateWithDuration:1.0 animations:^{
+          [UIView animateWithDuration:0.7 animations:^{
                 //successLabel.transform = CGAffineTransformMakeRotation(M_PI);
                 successLabel.transform = CGAffineTransformScale(successLabel.transform, 100, 100);
-              //along w/rotate above will go forward then back(may need *2 below)(scale transform above
-          /* completion:^(BOOL finished) {
+              //along w/rotate above will go forward then back(may need *2 below)(scale transform above excluded)
+          /* }completion:^(BOOL finished) {
               [UIView animateWithDuration:0.5 animations:^{
                   successLabel.transform = CGAffineTransformMakeRotation(M_PI * 4);
               }];*/
@@ -150,6 +150,16 @@
         
     }else{
         [lossLabel setHidden:NO];
+        lossLabel.transform = CGAffineTransformScale(successLabel.transform, 0.01, 0.01);
+        [UIView animateWithDuration:0.7 animations:^{
+           lossLabel.transform = CGAffineTransformMakeRotation(M_PI);
+            lossLabel.transform = CGAffineTransformScale(lossLabel.transform, 100, 100);
+            //along w/rotate above will go forward then back(may need *2 below)(scale transform above excluded)
+             }completion:^(BOOL finished) {
+             [UIView animateWithDuration:0.5 animations:^{
+             lossLabel.transform = CGAffineTransformMakeRotation(M_PI * 4);
+             }];
+        }];
     }
 }
 
